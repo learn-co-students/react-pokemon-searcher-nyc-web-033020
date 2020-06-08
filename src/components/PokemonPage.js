@@ -36,7 +36,7 @@ class PokemonPage extends React.Component {
 
 
   render() {
-    let pokemonList = this.state.pokemons.filter(pokemon => pokemon.name.includes(this.state.search.toLowerCase()) )
+    let pokemonList = this.state.pokemons.filter(pokemon => pokemon.name.toLowerCase().includes(this.state.search.toLowerCase()) )
     return (
       <Container>
         <h1>Pokemon Searcher</h1>
