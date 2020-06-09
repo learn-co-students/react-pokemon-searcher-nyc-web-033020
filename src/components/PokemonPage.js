@@ -23,7 +23,6 @@ class PokemonPage extends React.Component {
   }
 
   render() {
-    console.log(this.state.pokemon)
     return (
       <Container>
         <h1>Pokemon Searcher</h1>
@@ -32,7 +31,7 @@ class PokemonPage extends React.Component {
         <br />
         <Search />
         <br />
-        <PokemonCollection />
+        <PokemonCollection pokemon={this.state.pokemon}/>
       </Container>
     )
   }
