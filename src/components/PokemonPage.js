@@ -7,7 +7,12 @@ import { Container } from 'semantic-ui-react'
 class PokemonPage extends React.Component {
   
   state= {
-    pokemon: []
+    pokemon: [],
+    search: ''
+  }
+
+  handleSearch = (event) => {
+    this.setState({search: event.target.value})
   }
 
   fetchAllPokemon = () => {
@@ -23,18 +28,21 @@ class PokemonPage extends React.Component {
   }
 
   render() {
+    const searchPokemon = this.state.pokemon.filter(pokemon => pokemon.name.includes(this.state.search))
     return (
       <Container>
         <h1>Pokemon Searcher</h1>
         <br />
         <PokemonForm />
         <br />
-        <Search />
+        <Search handleSearch={this.handleSearch}/>
         <br />
-        <PokemonCollection pokemon={this.state.pokemon}/>
+        <PokemonCollection pokemon={searchPokemon}/>
       </Container>
     )
   }
 }
 
 export default PokemonPage
+
+//in order to filter you must filter through the pokemon list
