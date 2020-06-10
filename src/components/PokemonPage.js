@@ -27,13 +27,15 @@ class PokemonPage extends React.Component {
     this.fetchAllPokemon()
   }
 
+  //also add a way to filter pokemon by type ie)grass
+
   render() {
     const searchPokemon = this.state.pokemon.filter(pokemon => pokemon.name.includes(this.state.search))
     return (
       <Container>
         <h1>Pokemon Searcher</h1>
         <br />
-        <PokemonForm />
+        <PokemonForm reRender={this.fetchAllPokemon} />
         <br />
         <Search handleSearch={this.handleSearch}/>
         <br />
