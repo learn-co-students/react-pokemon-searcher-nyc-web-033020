@@ -8,10 +8,6 @@ class PokemonPage extends React.Component {
 
   state = {
     pokemons:[], 
-    name : '',
-    hp : null,
-    front : '',
-    back : '',
     searchTerm : ''
   }
 
